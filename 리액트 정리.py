@@ -47,14 +47,35 @@
 #   id = 'bbb'; //값 변경
 #   console.log("aaa 변수 값 변경 :", id);
 
-# 값 변경 후 화면에 바로 출력이 안되기 때문에 값 변경 후 변경된 값을 화면에 출력하려면 화면이 다시 렌더링 된 후 사용해야 함
-# useState변수는 값 변경 시 화면이 다시 렌더링되기 때문에 바로 변경된 값을 화면에 출력할 수 있음
+# 값 변경 후 화면에 바로 출력이 안되기 때문에 값 변경 후 변경된 값을 화면에 출력하려면 
+# 화면이 다시 렌더링 된 후 사용해야 함.
+# useState변수는 값 변경 시 화면이 다시 렌더링되기 때문에 바로 변경된 값을 화면에 출력할 수 있음.
 
 # 2.useState변수선언 및 값 변경 방법
 #   import { useState } from 'react'; 상단에 추가
 #   const [userId, setUserId] = useState('aaa'); //변수선언
 #   setUserId('bbb'); //값 변경
 #   console.log("aaa useState변수 :", userId); //값 출력
-# 다만 console.log로 출력할 때는 값 변경 후 바로 출력하면 변경 전 값이 출력됨
+# 다만 console.log로 출력할 때는 값 변경 후 바로 출력하면 변경 전 값이 출력됨.
+
+# 3.useRef변수선언 및 값 변경 방법
+#   import { useRef } from 'react'; 상단에 추가
+#   const userIdRef = useRef('aaa'); //변수선언
+#   userIdRef.current = 'bbb'; //값 변경
+#   console.log("aaa useRef변수 :", userIdRef.current); //값 출력
+# 다만 console.log로 출력할 때는 값 변경 후 바로 출력하면 변경 전 값이 출력됨.
+# useRef변수는 값 변경 시 화면이 다시 렌더링되지 않기 때문에 값 변경 후 변경된 값을 
+# 화면에 출력하려면 화면이 다시 렌더링 된 후 사용해야 함.
+
+# 4.useEffect함수 사용 방법
+#   import { useEffect } from 'react'; 상단에 추가
+#   useEffect( () => {
+#       //화면이 렌더링(처음로딩 및 갱신)될 때 실행할 코드 작성
+#   } );
+# 다만 useEffect함수는 화면이 렌더링(처음로딩 및 갱신)될 때마다 실행되기 때문에 
+# 특정 변수값이 변경될 때만 실행되도록 하려면 두번째 인수로 배열을 전달.
+#   useEffect( () => {
+#       //특정변수값이 변경될 때 실행할 코드 작성
+#   }, [특정변수] );
 #================================================================
 
