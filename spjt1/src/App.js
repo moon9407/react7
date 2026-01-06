@@ -23,7 +23,7 @@ function App() {
         <div></div>
         <h2 className='main'>메인페이지</h2>
         {/* src폴더에서 import사용방법 */}
-        <img src={i500} />       
+        <img src={i500} />
         {/* public폴더에서 절대경로 사용방법 */}
         <img src='/images/dog1.jpg'/> 
         
