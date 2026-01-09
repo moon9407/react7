@@ -52,10 +52,14 @@
 # useState변수는 값 변경 시 화면이 다시 렌더링되기 때문에 바로 변경된 값을 화면에 출력할 수 있음.
 
 # 2.useState변수선언 및 값 변경 방법
-#   import { useState } from 'react'; 상단에 추가
-#   const [userId, setUserId] = useState('aaa'); //변수선언
-#   setUserId('bbb'); //값 변경
-#   console.log("aaa useState변수 :", userId); //값 출력
+#   //상단에 import문에 추가
+#   import { useState } from 'react';
+#   //변수선언
+#   const [userId, setUserId] = useState('aaa'); 
+#   //값 변경
+#   setUserId('bbb');
+#   //값 출력
+#   console.log("aaa useState변수 :", userId);
 # 다만 console.log로 출력할 때는 값 변경 후 바로 출력하면 변경 전 값이 출력됨.
 
 # 3.useRef변수선언 및 값 변경 방법
@@ -78,4 +82,43 @@
 #       //특정변수값이 변경될 때 실행할 코드 작성
 #   }, [특정변수] );
 #================================================================
+
+#================================================================
+## 리엑트에서 리스트 출력 방법
+
+
+
+#================================================================
+
+
+
+#================================================================
+## 리엑트에서 컨퍼런트 처리 방법
+# 1.src폴더에 comp폴더 생성
+# 2.comp폴더에 js파일 생성 후 컴포넌트 작성 (항상 마지막에 export default 파일이름; 형식으로 작성)
+# 3.App.js에서 상단에 import문으로 불러오기 ex) import Nav from './comp/Nav';
+# 4.App.js에서 컴포넌트 태그로 사용하기 ex) <Nav />
+
+## 컨퍼런트에서 props값 전달 방법
+# 1.App.js에서 컴퍼넌트 태그에 속성으로 값 전달 ex) <Number btnName={"확인"} />
+# 2.컨퍼런트에서 전달된 props값 받기
+#   방법1: const Number = (props) => { ... props.btnName ... }
+#   방법2: const Number = ({btnName}) => { ... btnName ... }
+# 3.컨퍼런트에서 props값 사용하기
+#    ex) <button>{props.btnName}</button> 또는 <button>{btnName}</button>
+# 4.컨퍼런트에서 props값 여러개 전달받기
+#    방법1: const Number = (props) => { ... props.btnName, props.number ... }
+#    방법2: const Number = ({btnName, number}) => { ... btnName, number ... }
+# 5.컨퍼런트에서 props값으로 함수, useState변수 등도 전달 가능
+#   ex) <Number btnName={btnName} number={number} />
+#================================================================
+
+#=================================================================
+## 리액트에서 Bootstrap적용 방법
+# 1. public폴더의 index.html에서
+#    <head>태그 상단에 viewport메타태그 아래에
+#    https://www.bootstrapcdn.com/에서 복사한 주소 붙여넣기
+# 2. 리액트 컴포넌트에서 Bootstrap클래스 사용
+#    https://getbootstrap.com/ 에서 원하는 js파일에 코드 복사 후 붙여넣기
+#=================================================================
 
